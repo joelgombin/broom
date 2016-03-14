@@ -64,7 +64,8 @@ Suggests:
     gamlss,
     rstan,
     coda,
-    gmm
+    gmm,
+    FactoMineR
 URL: http://github.com/dgrtwo/broom
 BugReports: http://github.com/dgrtwo/broom/issues
 VignetteBuilder: knitr
