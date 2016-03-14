@@ -11,7 +11,7 @@
 
 \method{augment}{MCA}(x, data = x$call$X, n = 5, ...)
 
-\method{glance}{MCA}(x, n)
+\method{glance}{MCA}(x, n = 5)
 }
 \arguments{
 \item{x}{an object of class \code{MCA} or \code{PCA}}

@@ -69,7 +69,7 @@ augment.MCA <- function(x, data = x$call$X, n = 5, ...) {
 #' @return \code{glance} returns one row with each column corresponding to the eigenvalue of the dimension
 #' 
 #' @export
-glance.MCA <- function(x, n) {
+glance.MCA <- function(x, n = 5) {
     if (n > x$call$ncp) {
         warning("n larger than the numbers of dimensions computed. Reset to the  numbers of dimensions computed.")
         n <- x$call$ncp
