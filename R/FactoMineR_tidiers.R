@@ -75,7 +75,7 @@ glance.MCA <- function(x, n = 5) {
         n <- x$call$ncp
     }
     
-    unrowname(tidyr::spread(data.frame(dim = row.names(x$eig),
-               value = x$eig$eigenvalue), key = dim, value = value))
+    unrowname(tidyr::spread(data.frame(dim = row.names(x$eig)[1:n],
+               value = x$eig$eigenvalue[1:n]), key = dim, value = value))
 }
 
