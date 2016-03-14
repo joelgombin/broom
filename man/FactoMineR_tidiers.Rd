@@ -3,7 +3,7 @@
 \name{FactoMineR_tidiers}
 \alias{FactoMineR_tidiers}
 \alias{augment.MCA}
-\alias{glance.merMod}
+\alias{glance.MCA}
 \alias{tidy.MCA}
 \title{tidying methods for objects produced by \pkg{FactoMineR}}
 \usage{
@@ -11,7 +11,7 @@
 
 \method{augment}{MCA}(x, data = x$call$X, n = 5, ...)
 
-\method{glance}{merMod}(x, ...)
+\method{glance}{MCA}(x, n)
 }
 \arguments{
 \item{x}{an object of class \code{MCA} or \code{PCA}}
