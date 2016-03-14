@@ -22,12 +22,12 @@ tidy.MCA <- function(x, n = 5, ...) {
     }
     unrowname(data.frame(
                 term = rep(row.names(x$var$coord),  n),
-                dimension = 1:n,
-                coord = x$var$coord[1:n],
-                contrib = x$var$contrib[1:n],
-                cos2 = x$var$cos2[1:n],
-                v.test = x$var$v.test[1:n],
-                eta2 = x$var$eta2[1:n],
+                dimension = rep(1:n, length(row.names(x$var$coord))),
+                coord = as.vector(x$var$coord[,1:n]),
+                contrib = as.vector(x$var$contrib[,1:n]),
+                cos2 = as.vector(x$var$cos2[,1:n]),
+                v.test = as.vector(x$var$v.test[,1:n]),
+                eta2 = as.vector(x$var$eta2[,1:n]),
                 stringsAsFactors = FALSE
     ))
 
