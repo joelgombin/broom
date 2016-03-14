@@ -40,7 +40,7 @@ tidy.MCA <- function(x, n = 5, ...) {
                 eta2 = as.vector(x$var$eta2[,1:n]),
                 stringsAsFactors = FALSE)
     )
-    unrowname(res)
+    unrowname(tmp)
 
 }
 
