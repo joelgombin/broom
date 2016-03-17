@@ -15,6 +15,7 @@ NULL
 #' @method tidy MCA
 #' @rdname FactoMineR_tidiers
 #' @import dplyr 
+#' @importFrom tidyr gather spread
 #' @export
 
 tidy.MCA <- function(x, var.sup = NULL, n = 5, ...) {
@@ -50,13 +51,13 @@ tidy.MCA <- function(x, var.sup = NULL, n = 5, ...) {
             tmp <- rbind(
                 tmp,
                 df %>% 
-                    dplyr::mutate(w = x$call$row.w) %>% 
-                    tidyr::gather_("variable", "term", varsups) %>% 
-                    dplyr::group_by(term) %>% 
-                    dplyr::summarise_each(funs(weighted.mean(., w = w)), 1:n) %>% 
-                    tidyr::gather(dimension, coord, -term) %>% 
-                    dplyr::mutate(dimension = as.integer(stringr::str_replace(dimension, "Dim ", ""))) %>% 
-                    dplyr::mutate(contrib = NA, cos2 = NA, v.test = NA, eta2 = NA)
+                    mutate(w = x$call$row.w) %>% 
+                    gather_("variable", "term", varsups) %>% 
+                    group_by(term) %>% 
+                    summarise_each(funs(weighted.mean(., w = w)), 1:n) %>% 
+                    gather(dimension, coord, -term) %>% 
+                    mutate(dimension = as.integer(stringr::str_replace(dimension, "Dim ", ""))) %>% 
+                    mutate(contrib = NA, cos2 = NA, v.test = NA, eta2 = NA)
             )
 
         }
