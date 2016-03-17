@@ -7,20 +7,24 @@
 \alias{tidy.MCA}
 \title{tidying methods for objects produced by \pkg{FactoMineR}}
 \usage{
-\method{tidy}{MCA}(x, n = 5, ...)
+\method{tidy}{MCA}(x, var.sup = NULL, n = 5, ...)
 
-\method{augment}{MCA}(x, data = x$call$X, n = 5, ...)
+\method{augment}{MCA}(x, data = x$call$X, ind.sup = NULL, n = 5, ...)
 
 \method{glance}{MCA}(x, n = 5)
 }
 \arguments{
 \item{x}{an object of class \code{MCA} or \code{PCA}}
 
+\item{var.sup}{supplementary variables. A data frame with the same number of rows as the original dataframes, and discrete variables}
+
 \item{n}{number of dimensions to take into account}
 
 \item{...}{extra arguments (not used)}
 
 \item{data}{original data this was fitted on}
+
+\item{ind.sup}{a dataframe with supplementary individuals. It must have the same (active) variables as the original dataframe}
 
 \item{n}{number of dimensions to take into account}
 
@@ -29,7 +33,7 @@
 \item{...}{extra arguments (not used)}
 }
 \value{
-\code{augment} returns one row for each original observation,
+\code{augment} returns one row for each original observation, and for the supplemnetary individuals if there are some,
 with columns (each prepended by a .) added. They are called .Dim followed by the numer of the dimension.
 
 \code{glance} returns one row with each column corresponding to the eigenvalue of the dimension
