@@ -15,7 +15,7 @@ NULL
 #' @method tidy MCA
 #' @rdname FactoMineR_tidiers
 #' @import dplyr 
-#' @importFrom tidyr gather spread
+#' @importFrom tidyr gather gather_ spread
 #' @export
 
 tidy.MCA <- function(x, var.sup = NULL, n = 5, ...) {
